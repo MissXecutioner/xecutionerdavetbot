@@ -31,18 +31,6 @@ async function foobar() {
 
 var prefix = ayarlar.prefix;
 
-const app = express();
-app.get("/", (request, response) => {
-  console.log(Date.now() + " Ping tamamdır.");
-  response.sendStatus(200);
-});
-app.listen(process.env.PORT);
-setInterval(() => {
-  http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);
-}, 280000);
-
-var prefix = ayarlar.prefix;
-
 const log = message => {
   console.log(`${message}`);
 };
@@ -126,7 +114,7 @@ client.elevation = message => {
   return permlvl;
 };
 
-client.login(ayarlar.token).then(
+/*client.login(ayarlar.token).then(
   function() {
     console.log("[Token-Log] Token doğru bir şekilde çalışıyor.");
   },
@@ -136,7 +124,7 @@ client.login(ayarlar.token).then(
       process.exit(0);
     }, 20000);
   }
-);
+);*/
 
 client.on("ready", () => {
   client.channels.cache.get(ayarlar.botses).join();
